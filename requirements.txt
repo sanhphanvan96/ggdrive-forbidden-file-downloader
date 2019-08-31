@@ -1,0 +1,6 @@
+autopep8
+selenium
+selenium-wire
+requests
+halo
+easyargs
