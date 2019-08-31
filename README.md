@@ -30,5 +30,5 @@ optional arguments:
 ```
 
 ```
-python get-video.py https://drive.google.com/file/d/1uOTsAdwYRSLvdpYNPkvrxiCr4SHsx86p/view --filename=ggdrive.mp4
+python get-video.py https://drive.google.com/file/d/1uOTsAdwYRSLvdpYNPkvrxiCr4SHsx86p/view --filename=ggdrive
 ```

@@ -1,5 +1,6 @@
 import requests
 import easyargs
+import mimetypes
 from halo import Halo
 from selenium.webdriver.firefox.options import Options
 from seleniumwire import webdriver
@@ -46,14 +47,18 @@ def get_playback_link(url):
 def download_video(url, filename):
     global cookies
     r = requests.get(url, cookies=cookies, stream=True)
+    ext = mimetypes.guess_extension(r.headers.get('content-type'))
+    filename += ext
     with open(filename, 'wb') as f:
         f.write(r.content)
+    print('\n' + filename)
+
 
 @easyargs
-def main(videourl, filename='video.mp4'):
+def main(videourl, filename='video'):
     if videourl:
         download_video(get_playback_link(videourl), filename)
-        print(filename)
+
 
 if __name__ == '__main__':
     main()
